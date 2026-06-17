@@ -1,7 +1,9 @@
 let score = 0;
 
-// 🎯 Quiz
+// 🎯 QUIZ
 function responder(correto, btn) {
+  if (btn.disabled) return;
+
   if (correto) {
     score++;
     btn.style.background = "green";
@@ -9,28 +11,31 @@ function responder(correto, btn) {
     btn.style.background = "red";
   }
 
+  btn.parentElement.querySelectorAll("button").forEach(b => b.disabled = true);
+
   document.getElementById("score").innerText = "Pontuação: " + score;
 }
 
-// 🌙 Modo escuro
-const btnTheme = document.getElementById("toggleTheme");
+// 🌙 DARK MODE
+const themeBtn = document.getElementById("themeBtn");
 
-btnTheme.addEventListener("click", () => {
+themeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
   if (document.body.classList.contains("dark")) {
-    btnTheme.innerText = "☀️ Modo Claro";
+    themeBtn.innerText = "☀️ Modo Claro";
   } else {
-    btnTheme.innerText = "🌙 Modo Escuro";
+    themeBtn.innerText = "🌙 Modo Escuro";
   }
 });
 
-// 📩 Formulário
+// 📩 FORMULÁRIO
 const form = document.getElementById("form");
-const msg = document.getElementById("formMsg");
+const msg = document.getElementById("msg");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  msg.innerText = "Mensagem enviada com sucesso! Obrigado por contribuir.";
+
+  msg.innerText = "Denúncia enviada com sucesso. Obrigado por contribuir!";
   form.reset();
 });
