@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cidadania Digital e IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>🧠 Cidadania Digital e Inteligência Artificial</h1>
+    <p>Como identificar deepfakes e combater a desinformação</p>
+
+    <button id="toggleTheme">🌙 Modo Escuro</button>
+  </header>
+
+  <main>
+
+    <section class="card">
+      <h2>⚠️ O que são Deepfakes?</h2>
+      <p>
+        Deepfakes são vídeos, áudios ou imagens manipulados por inteligência artificial
+        para simular pessoas dizendo ou fazendo coisas que nunca aconteceram.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🧪 Quiz Anti-Desinformação</h2>
+
+      <p>1. Toda informação da internet é confiável?</p>
+      <button onclick="responder(false, this)">Sim</button>
+      <button onclick="responder(true, this)">Não</button>
+
+      <p>2. Deepfakes podem ser usados para enganar pessoas?</p>
+      <button onclick="responder(true, this)">Sim</button>
+      <button onclick="responder(false, this)">Não</button>
+
+      <p id="score">Pontuação: 0</p>
+    </section>
+
+    <section class="card">
+      <h2>📩 Denuncie desinformação</h2>
+
+      <form id="form">
+        <label>Nome:</label>
+        <input type="text" required>
+
+        <label>Mensagem:</label>
+        <textarea required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <p id="formMsg"></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Projeto escolar - Cidadania Digital 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
