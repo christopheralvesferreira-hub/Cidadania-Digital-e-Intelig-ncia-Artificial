@@ -3,64 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cidadania Digital e IA</title>
+  <title>Portal Cidadania Digital</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <h1>🧠 Cidadania Digital e Inteligência Artificial</h1>
-    <p>Como identificar deepfakes e combater a desinformação</p>
 
-    <button id="toggleTheme">🌙 Modo Escuro</button>
-  </header>
+<header class="topbar">
+  <div>
+    <h1>🧠 Portal de Cidadania Digital</h1>
+    <p>IA, Deepfakes e combate à desinformação</p>
+  </div>
 
-  <main>
+  <button id="themeBtn">🌙 Modo Escuro</button>
+</header>
 
-    <section class="card">
-      <h2>⚠️ O que são Deepfakes?</h2>
-      <p>
-        Deepfakes são vídeos, áudios ou imagens manipulados por inteligência artificial
-        para simular pessoas dizendo ou fazendo coisas que nunca aconteceram.
-      </p>
-    </section>
+<nav class="menu">
+  <a href="#sobre">Sobre</a>
+  <a href="#deepfake">Deepfakes</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#denuncia">Denúncia</a>
+</nav>
 
-    <section class="card">
-      <h2>🧪 Quiz Anti-Desinformação</h2>
+<main>
 
-      <p>1. Toda informação da internet é confiável?</p>
-      <button onclick="responder(false, this)">Sim</button>
-      <button onclick="responder(true, this)">Não</button>
+  <!-- SOBRE -->
+  <section id="sobre" class="card">
+    <h2>📌 O que é cidadania digital?</h2>
+    <p>
+      Cidadania digital é o uso consciente, ético e seguro da tecnologia.
+      Envolve saber identificar fake news, proteger dados e agir com responsabilidade online.
+    </p>
+  </section>
 
+  <!-- DEEPFAKES -->
+  <section id="deepfake" class="card">
+    <h2>⚠️ Deepfakes e Desinformação</h2>
+
+    <div class="grid">
+      <div class="box">
+        <h3>O que são?</h3>
+        <p>Conteúdos falsificados por IA que simulam pessoas reais.</p>
+      </div>
+
+      <div class="box">
+        <h3>Riscos</h3>
+        <p>Manipulação política, golpes e fake news em massa.</p>
+      </div>
+
+      <div class="box">
+        <h3>Como identificar?</h3>
+        <p>Desconfie de fontes, verifique imagens e procure confirmação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="card">
+    <h2>🧪 Quiz Anti-Desinformação</h2>
+
+    <div class="quiz-box">
+      <p>1. Tudo que viraliza na internet é verdadeiro?</p>
+      <button onclick="responder(false,this)">Sim</button>
+      <button onclick="responder(true,this)">Não</button>
+    </div>
+
+    <div class="quiz-box">
       <p>2. Deepfakes podem ser usados para enganar pessoas?</p>
-      <button onclick="responder(true, this)">Sim</button>
-      <button onclick="responder(false, this)">Não</button>
+      <button onclick="responder(true,this)">Sim</button>
+      <button onclick="responder(false,this)">Não</button>
+    </div>
 
-      <p id="score">Pontuação: 0</p>
-    </section>
+    <div class="quiz-box">
+      <p>3. Sempre devemos verificar a fonte da informação?</p>
+      <button onclick="responder(true,this)">Sim</button>
+      <button onclick="responder(false,this)">Não</button>
+    </div>
 
-    <section class="card">
-      <h2>📩 Denuncie desinformação</h2>
+    <p id="score">Pontuação: 0</p>
+  </section>
 
-      <form id="form">
-        <label>Nome:</label>
-        <input type="text" required>
+  <!-- DENUNCIA -->
+  <section id="denuncia" class="card">
+    <h2>📩 Denuncie desinformação</h2>
 
-        <label>Mensagem:</label>
-        <textarea required></textarea>
+    <form id="form">
+      <label>Nome</label>
+      <input type="text" required>
 
-        <button type="submit">Enviar</button>
-      </form>
+      <label>Tipo de conteúdo suspeito</label>
+      <select required>
+        <option>Fake news</option>
+        <option>Deepfake</option>
+        <option>Golpe online</option>
+      </select>
 
-      <p id="formMsg"></p>
-    </section>
+      <label>Descrição</label>
+      <textarea required></textarea>
 
-  </main>
+      <button type="submit">Enviar denúncia</button>
+    </form>
 
-  <footer>
-    <p>Projeto escolar - Cidadania Digital 2026</p>
-  </footer>
+    <p id="msg"></p>
+  </section>
 
-  <script src="script.js"></script>
+</main>
+
+<footer>
+  <p>Projeto escolar • Cidadania Digital 2026</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
